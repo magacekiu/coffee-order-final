@@ -19,4 +19,4 @@ COPY ./src ./src
 RUN mvn package -DskipTests
 
 # Run the jar file 
-ENTRYPOINT ["java","-jar","/app/target/c322-spring2024-homework2-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app/target/coffee-order-0.0.1-SNAPSHOT.jar"]
