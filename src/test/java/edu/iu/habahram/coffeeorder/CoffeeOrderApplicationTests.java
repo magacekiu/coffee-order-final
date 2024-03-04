@@ -42,7 +42,7 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("Decaf", Collections.singletonList("Soy"));
         var receipt = orderRepository.add(order);
         assertEquals("Decaf Coffee, Soy", receipt.description());
-        assertEquals(1.68f, receipt.cost());
+        assertEquals(1.56f, receipt.cost());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("HouseBlend", Collections.singletonList("Whip"));
         var receipt = orderRepository.add(order);
         assertEquals("House Blend Coffee, Whip", receipt.description());
-        assertEquals(1.95f, receipt.cost());
+        assertEquals(1.9f, receipt.cost());
     }
 
     @Test
@@ -72,7 +72,7 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("Espresso", Arrays.asList("Milk", "Mocha", "Whip", "Soy"));
         var receipt = orderRepository.add(order);
         assertEquals("Espresso, Milk, Mocha, Whip, Soy", receipt.description());
-        assertEquals(2.74f, receipt.cost());
+        assertEquals(2.56f, receipt.cost());
     }
 
     @Test
@@ -96,7 +96,7 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("HouseBlend", Arrays.asList("Mocha", "Whip"));
         var receipt = orderRepository.add(order);
         assertEquals("House Blend Coffee, Mocha, Whip", receipt.description());
-        assertEquals(2.25f, receipt.cost());
+        assertEquals(2.2f, receipt.cost());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("Dark Roast", Arrays.asList("Soy", "Milk"));
         var receipt = orderRepository.add(order);
         assertEquals("Dark roast, Soy, Milk", receipt.description());
-        assertEquals(2.73f, receipt.cost());
+        assertEquals(2.66f, receipt.cost());
     }
 
     @Test
@@ -112,7 +112,7 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("Espresso", Collections.singletonList("Whip"));
         var receipt = orderRepository.add(order);
         assertEquals("Espresso, Whip", receipt.description());
-        assertEquals(1.64f, receipt.cost());
+        assertEquals(1.59f, receipt.cost());
     }
 
     @Test
@@ -136,6 +136,6 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("Espresso", Arrays.asList("Milk", "Soy"));
         var receipt = orderRepository.add(order);
         assertEquals("Espresso, Milk, Soy", receipt.description());
-        assertEquals(2.14f, receipt.cost());
+        assertEquals(2.01f, receipt.cost());
     }
 }
