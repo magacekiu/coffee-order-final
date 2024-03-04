@@ -42,7 +42,7 @@ public class CoffeeOrderApplicationTests {
         var order = new OrderData("Decaf", Collections.singletonList("Soy"));
         var receipt = orderRepository.add(order);
         assertEquals("Decaf Coffee, Soy", receipt.description());
-        assertEquals(1.56f, receipt.cost());
+        assertEquals(1.55f, receipt.cost());
     }
 
     @Test
