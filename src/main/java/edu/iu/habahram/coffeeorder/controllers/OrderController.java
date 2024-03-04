@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/orders")
-@CrossOrigin(origins = "https://magacekiu.github.io/coffee-order-ui/") // Adjust the URL to match your GitHub Pages URL
+@CrossOrigin(origins = "https://magacekiu.github.io")
 public class OrderController {
     private OrderRepository orderRepository;
 
