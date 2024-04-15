@@ -5,6 +5,12 @@ import org.springframework.stereotype.Repository;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
@@ -57,5 +63,20 @@ public class OrderRepository {
             e.printStackTrace();
         }
         return receipt;
+    }
+
+    public List<OrderData> findAll() throws IOException {
+        List<OrderData> orders = new ArrayList<>();
+        Path path = Paths.get("db.txt"); 
+        List<String> lines = Files.readAllLines(path);
+        for (String line : lines) {
+            if (!line.trim().isEmpty()) {
+                String[] parts = line.split(",");
+                String beverage = parts[0];
+                List<String> condiments = Arrays.asList(parts).subList(1, parts.length);
+                orders.add(new OrderData(beverage, condiments));
+            }
+        } 
+        return orders;
     }
 }
